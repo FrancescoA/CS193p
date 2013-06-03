@@ -48,4 +48,35 @@
     return (index < self.cards.count) ? self.cards[index] : nil;
 }
 
+#define MATCH_BONUS 4
+#define MISMATCH_PENALTY 2
+#define FLIP_PENALTY 1
+
+-(void)flipCardAtIndex:(NSUInteger)index
+{
+    Card *card = [self cardAtIndex:index];
+
+    if (!card.isUnplayable) {
+        if(!card.isFaceUp){
+            for(Card *otherCard in self.cards){
+                if(otherCard.isFaceUp && !otherCard.unplayable){
+                    int matchScore = [card match: @[otherCard]];
+                    if(matchScore){
+                        otherCard.unplayable = YES;
+                        card.unplayable = YES;
+                        self.score += matchScore * MATCH_BONUS;
+                    }
+                    else {
+                        otherCard.faceUp = NO;
+                        self.score -= MISMATCH_PENALTY;
+                    }
+                    break;
+                }
+            }
+            self.score -= MISMATCH_PENALTY;
+        }
+        card.faceUp = !card.isFaceUp;
+    }
+}
+
 @end
