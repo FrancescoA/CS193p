@@ -73,7 +73,7 @@
                     break;
                 }
             }
-            self.score -= MISMATCH_PENALTY;
+            self.score -= FLIP_PENALTY;
         }
         card.faceUp = !card.isFaceUp;
     }
