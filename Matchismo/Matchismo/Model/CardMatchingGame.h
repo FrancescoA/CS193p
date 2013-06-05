@@ -12,6 +12,7 @@
 @interface CardMatchingGame : NSObject
 
 @property (nonatomic, readonly) int score;
+@property (nonatomic, readonly) NSString *message;
 
 //designated inizializer
 -(id)initWithCardCount:(NSUInteger) cardCount
