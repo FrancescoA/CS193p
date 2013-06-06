@@ -10,7 +10,7 @@
 #import "Deck.h"
 
 @interface CardMatchingGame : NSObject
-
+@property (nonatomic, readonly) NSMutableArray *cards;
 @property (nonatomic, readonly) int score;
 @property (nonatomic, readonly) NSString *message;
 

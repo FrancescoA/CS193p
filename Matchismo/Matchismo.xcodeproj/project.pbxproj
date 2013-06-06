@@ -23,6 +23,7 @@
 		13635AD0175A8E30009DDAE6 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 13635ACF175A8E30009DDAE6 /* PlayingCard.m */; };
 		13635AD3175BD7E5009DDAE6 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 13635AD2175BD7E5009DDAE6 /* PlayingCardDeck.m */; };
 		13635AD6175D072C009DDAE6 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 13635AD5175D072C009DDAE6 /* CardMatchingGame.m */; };
+		13635ADC175FC010009DDAE6 /* ThreeCardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 13635ADB175FC010009DDAE6 /* ThreeCardMatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		13635AD2175BD7E5009DDAE6 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
 		13635AD4175D072C009DDAE6 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		13635AD5175D072C009DDAE6 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
+		13635ADA175FC010009DDAE6 /* ThreeCardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeCardMatchingGame.h; path = Model/ThreeCardMatchingGame.h; sourceTree = "<group>"; };
+		13635ADB175FC010009DDAE6 /* ThreeCardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeCardMatchingGame.m; path = Model/ThreeCardMatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 		1301344A175657D6004B4E25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				13635ADA175FC010009DDAE6 /* ThreeCardMatchingGame.h */,
+				13635ADB175FC010009DDAE6 /* ThreeCardMatchingGame.m */,
 				13635AD4175D072C009DDAE6 /* CardMatchingGame.h */,
 				13635AD5175D072C009DDAE6 /* CardMatchingGame.m */,
 				1301344717565764004B4E25 /* Card.h */,
@@ -215,6 +220,7 @@
 				13635AD0175A8E30009DDAE6 /* PlayingCard.m in Sources */,
 				13635AD3175BD7E5009DDAE6 /* PlayingCardDeck.m in Sources */,
 				13635AD6175D072C009DDAE6 /* CardMatchingGame.m in Sources */,
+				13635ADC175FC010009DDAE6 /* ThreeCardMatchingGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

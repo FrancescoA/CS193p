@@ -10,6 +10,7 @@
 #import "Deck.h"
 #import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
+#import "ThreeCardMatchingGame.h"
 
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
@@ -57,11 +58,20 @@
     [self updateUI];
 }
 - (IBAction)deal {
-    self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
+    self.game = [[[self.game class] alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
     self.flipCount = 0;
     [self updateUI];
 }
 
+- (IBAction)gameTypeSelect:(UISegmentedControl *)sender {
+    Deck *toBeUsed = [[PlayingCardDeck alloc] init];
+    self.game = sender.selectedSegmentIndex ?
+    [[ThreeCardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:toBeUsed]
+    : [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck: toBeUsed];
+    
+
+    
+}
 
 - (IBAction)flipCard:(UIButton *)sender
 {
