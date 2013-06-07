@@ -27,16 +27,22 @@
 -(int)match:(NSArray *)otherCards
 {
     int score = 0;
+    NSMutableArray *mutableCards = [otherCards mutableCopy];
+    [mutableCards addObject:self];
     
-    if(otherCards.count == 1) {
-        PlayingCard *otherCard = [otherCards lastObject];
-        if([otherCard.suit isEqualToString:self.suit]) {
-            score = 1;
-        }else if (otherCard.rank == self.rank){
-            score = 4;
+    for(int i=0 ; i < mutableCards.count ; i++){
+        for(int j=i+1 ;j <mutableCards.count ; j++){
+            PlayingCard *x = mutableCards[i];
+            PlayingCard *y = mutableCards[j];
+            
+            if([x.suit isEqualToString:y.suit]){
+                score += 1;
+            }else if(x.rank == y.rank){
+                score +=4;
+            }
         }
-        
     }
+    
     return score;
 }
 
