@@ -14,11 +14,13 @@
 
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *outcomeLabel;
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) CardMatchingGame *game;
+@property (strong, nonatomic) UIImage *cardback;
 @end
 
 @implementation CardGameViewController
@@ -37,10 +39,19 @@
 }
 
 
+-(UIImage *)cardback
+{
+    if(!_cardback) _cardback = [UIImage imageNamed:@"cardback.jpg"];
+    return _cardback;
+}
+
 -(void)updateUI
 {
     for(UIButton *cardButton in self.cardButtons){
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
+        card.isFaceUp ? [cardButton setImage:nil forState:UIControlStateNormal] : [cardButton setImage:self.cardback forState:UIControlStateNormal];
+        
+        
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
         [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
         cardButton.selected = card.isFaceUp;
@@ -58,6 +69,7 @@
     [self updateUI];
 }
 - (IBAction)deal {
+    [self setSegmentStateTo:YES];
     self.game = [[[self.game class] alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
     self.flipCount = 0;
     [self updateUI];
@@ -73,10 +85,16 @@
     
 }
 
+-(void)setSegmentStateTo:(BOOL)setting
+{
+    [_segmentedControl setEnabled:setting];
+}
+
 - (IBAction)flipCard:(UIButton *)sender
 {
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
+    [self setSegmentStateTo:NO];
     [self updateUI];
     
 }

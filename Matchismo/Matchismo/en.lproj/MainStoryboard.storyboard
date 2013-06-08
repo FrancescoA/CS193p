@@ -323,6 +323,7 @@
                         <outlet property="flipsLabel" destination="F2u-pd-GGa" id="PBl-WJ-glA"/>
                         <outlet property="outcomeLabel" destination="b0b-1T-11F" id="FbH-zy-MR7"/>
                         <outlet property="scoreLabel" destination="Ojp-Rv-P2L" id="Pr7-qi-kaN"/>
+                        <outlet property="segmentedControl" destination="1sr-zX-9uA" id="ukm-cg-hM4"/>
                         <outletCollection property="cardButtons" destination="DWA-wY-dmn" id="ncG-DJ-7pl"/>
                         <outletCollection property="cardButtons" destination="Wvw-LL-3P1" id="SEw-14-Wna"/>
                         <outletCollection property="cardButtons" destination="69C-QC-zTT" id="4hN-g3-1iD"/>
@@ -343,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-548" y="-3"/>
+            <point key="canvasLocation" x="-628" y="-3"/>
         </scene>
     </scenes>
     <classes>
@@ -355,6 +356,7 @@
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="outcomeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
